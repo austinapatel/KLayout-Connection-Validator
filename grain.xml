@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<salt-grain>
+ <name>Connection_Validator</name>
+ <token/>
+ <hidden>false</hidden>
+ <version>0.0</version>
+ <api-version/>
+ <title>Connection Validator</title>
+ <doc>Checks connections in layouts to ensure that layout components that should be connection are only connected to pieces that they should be.</doc>
+ <doc-url>https://github.com/austinapatel/KLayout-Connection-Validator</doc-url>
+ <url/>
+ <license>GPLv3</license>
+ <author>Austin Patel</author>
+ <author-contact>austinapatel@gmail.com</author-contact>
+ <authored-time/>
+ <installed-time>2020-01-26T17:21:07</installed-time>
+ <icon/>
+ <screenshot/>
+</salt-grain>
