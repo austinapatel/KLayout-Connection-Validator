@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <klayout-macro>
- <description>The New DRC Script</description>
+ <description>Connection Validator</description>
  <version/>
  <category>drc</category>
  <prolog/>
@@ -9,7 +9,7 @@
  <autorun>false</autorun>
  <autorun-early>false</autorun-early>
  <shortcut/>
- <show-in-menu>false</show-in-menu>
+ <show-in-menu>true</show-in-menu>
  <group-name/>
  <menu-path/>
  <interpreter>dsl</interpreter>
@@ -44,7 +44,8 @@ metalEx = input(13, 0)
 
 # do layer math
 trench = (trench_raw - nottrench) + retrench - trenchEx
-soi = (soi_raw - soihole) + resoi + (dummy - notdummy) - soiEx
+#soi = (soi_raw - soihole) + resoi + (dummy - notdummy) - soiEx
+soi = (soi_raw - soihole) + resoi - soiEx # ignoring dummy for now!!!! change back later
 metal = (metal_raw - metalhole) + remetal - metalEx
 
 # CONNECT LAYERS
@@ -67,7 +68,10 @@ netlist.each_circuit do |cir|
       error(msg)
     end
     
-    if net_names.include? net.name and net.name != ""
+    wildcard = net.name.include? "*"
+    wildcard = false
+    
+    if net_names.include? net.name and net.name != "" and not wildcard
       msg = net.name + " has unconnected pieces\n"
       $result += msg
       error(msg)

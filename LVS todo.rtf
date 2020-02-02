@@ -1,0 +1,18 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 LVS notes:\
+\
+Sometimes different disconnected parts of layout have same names, so use of wildcard character \'91*\'92 is helpful\
+\
+When labeling layouts rather than following the connections to see what should be connected to what we should instead labels nodes as they are labeled by the polygon text on the pin (following path is prone to error)\
+\
+Rather than output saying all good or there are errors, it should instead say what is connected to what, then it is the job of the user to validate to make sure that the correct things are connected (consider for example GPIO pin 3 connected to motor pin V+. In this case, the pins shouldn\'92t have the same name, but rather the output should show that they are connected and then the user determines if that is what they wanted).\
+\
+Problem with having disconnect check is that if there are different pins in the different locations across a circuit, but they shouldn\'92t be connected (if there are multiple copies of something for example), then the program shouldn\'92t complain about that. Solution could be to make sure each net that is user defined has at least two labels.\
+\
+Is schematic capture possible in KLayout? Has it already been done? Need to read publications.}
