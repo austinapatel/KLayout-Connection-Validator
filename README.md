@@ -2,7 +2,7 @@
 Uses KLayout DRC functionality to check for layout errors in circuit schematics.
 
 # Requirements
-KLayout 0.26+ (As of 1/1/2020, not available on MacOS)
+KLayout 0.26+
 
 # Setup
 To use, first create a layer with number 3 (SOI) and datatype 1 that includes text KLayout objects positioned on top of portions of the circuit to identify the 'net name'. Adding multiple text labels with the same text on top of different portions of the circuit is a good way to ensure that two different parts of the circuit are connected to one another.
